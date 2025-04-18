@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎂 Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffe6cc);
+      text-align: center;
+    }
+
+    header {
+      background-color: #ff4081;
+      color: white;
+      padding: 30px;
+      font-size: 2.5em;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px auto;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .note-button {
+      background-color: #ff4081;
+      color: white;
+      font-size: 1.2em;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px auto;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    .note-button:hover {
+      background-color: #e73370;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 8% auto;
+      padding: 30px;
+      border-radius: 20px;
+      width: 400px;
+      height: 400px;
+      text-align: left;
+      overflow-y: auto;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      color: #888;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 1.2em;
+      color: #888;
+    }
+
+    .note-text {
+      white-space: pre-wrap;
+      font-size: 1em;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+    <source src="birthday-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+
+  <header>🎈 Happy Birthday Sush! 🎂</header>
+
+  <!-- Photo Gallery -->
+  <section class="gallery">
+    <img src="photo1.jpeg" alt="Birthday Photo 1">
+    <img src="photo2.jpeg" alt="Birthday Photo 2">
+    <img src="photo3.jpeg" alt="Birthday Photo 3">
+  </section>
+
+  <!-- Notes Button -->
+  <button class="note-button" onclick="openModal()">Open My Birthday Message 🎁</button>
+  
+
+  <!-- Modal for Note -->
+  <div id="noteModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="note-text">
+        Once again Wish you Happy Birthday Stupid!! 🥳 🎉
+
+        If I start explaining about you, paragraphs are not enough to tell about you, but because it's your special day, I will say about you in a short paragraph.😄
+
+        The first girl with whom I was close in my life. The girl whom I was irritating daily and teasing by many nicknames. I know I have irritated you a lot until you cried 😅 — sorry for all! 😊
+
+        You are the only one who knows all my secrets. 🥰
+
+        Every single day as a classmate were beautiful memories, stupid!! 🫶🏻
+      </div>
+    </div>
+  </div>
+
+  <footer>Made with 💖 for your special day</footer>
+
+  <script>
+    function openModal() {
+      document.getElementById("noteModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("noteModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("noteModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
